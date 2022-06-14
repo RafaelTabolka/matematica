@@ -8,8 +8,7 @@ public class Matematica {
         List<Figura> listaFigura = new ArrayList<Figura>();
 
         try {
-            Figura classeRetangulo = new Retangulo("Retângulo", "Verde", -10, 12);
-            listaFigura.add(classeRetangulo);
+            listaFigura.add(new Retangulo("Retângulo", "Verde", -10, 12));
         } catch (FiguraException | RuntimeException e) {
             System.out.println("Erro: " + e.getMessage());
         } finally {
@@ -17,8 +16,7 @@ public class Matematica {
         }
 
         try {
-            Figura classeCirculo = new Circulo("Círculo", "Vermelho", 4);
-            listaFigura.add(classeCirculo);
+            listaFigura.add(new Circulo("Círculo", "Vermelho", 4));
         } catch (FiguraException | RuntimeException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -26,14 +24,15 @@ public class Matematica {
         }
 
         try {
-            Figura classeTriangulo = new Triangulo("Triângulo", "Amarelo", 20, 14);
-            listaFigura.add(classeTriangulo);
+            listaFigura.add(new Triangulo("Triângulo", "Amarelo", 20, 14));
         } catch (FiguraException | RuntimeException e) {
             System.out.println(e.getMessage());
         } finally {
             System.out.println("Terceito try/catch");
         }
 
+        System.out.println();
+        
         for (Figura x : listaFigura) {
             System.out.println("A figura " + x.getNome() + " tem área igual a: " + String.format("%.3fmm²%n",x.calcularArea()));
         }
